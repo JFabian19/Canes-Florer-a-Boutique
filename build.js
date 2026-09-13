@@ -13,6 +13,11 @@ if (fs.existsSync(path.join(__dirname, 'index.html'))) {
   fs.copyFileSync(path.join(__dirname, 'index.html'), path.join(distDir, 'index.html'));
 }
 
+// Copiar carta.html
+if (fs.existsSync(path.join(__dirname, 'carta.html'))) {
+  fs.copyFileSync(path.join(__dirname, 'carta.html'), path.join(distDir, 'carta.html'));
+}
+
 // Copiar carpeta css
 const cssDir = path.join(__dirname, 'css');
 if (fs.existsSync(cssDir)) {

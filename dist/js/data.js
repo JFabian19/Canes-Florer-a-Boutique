@@ -19,7 +19,7 @@ const CATEGORIES = [
   { id: "girasoles", name: "Edición Girasoles 🌻" },
   { id: "romance", name: "Rosas & Romance 🌹" },
   { id: "silvestres", name: "Silvestres Andinos 🌿" },
-  { id: "cajas", name: "Cajas de Autor & NFC 🎁" },
+  { id: "cajas", name: "Cajas de Autor & Carta 🎁" },
   { id: "cumpleanos", name: "Cumpleaños & Fiestas 🎂" }
 ];
 
@@ -35,24 +35,24 @@ const PRODUCTS = [
     rating: 5.0,
     reviewsCount: 38,
     image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80",
-    description: "Inspirado en el cielo radiante de los valles cajamarquinos. Ramo con 7 girasoles de primera selección, mimosas amarillas silvestres, eucalipto fresco y tarjeta interactiva NFC Canes incluida.",
+    description: "Inspirado en el cielo radiante de los valles cajamarquinos. Ramo con 7 girasoles de primera selección, mimosas amarillas silvestres, eucalipto fresco y tarjeta con carta digital multimedia incluida.",
     includesNfc: true,
-    composition: ["7 Girasoles gigantes", "Follaje de Eucalipto andino", "Mimosas amarillas", "Papel kraft premium & cinta de lino", "Tarjeta inteligente NFC"]
+    composition: ["7 Girasoles gigantes", "Follaje de Eucalipto andino", "Mimosas amarillas", "Papel kraft premium & cinta de lino", "Tarjeta con dedicatoria digital"]
   },
   {
     id: 2,
     name: "Caja Canes Girasoles & Amor",
     category: "cajas",
-    tag: "Exclusivo NFC",
+    tag: "Con Carta Digital 💌",
     isFeatured: true,
     price: 180.00,
     oldPrice: 210.00,
     rating: 4.9,
     reviewsCount: 42,
     image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=800&q=80",
-    description: "Nuestra caja insignia de diseño rígido en tono mostaza y crema. Contiene girasoles y rosas champagne seleccionadas a mano, bombones artesanales y tarjeta NFC programada con tus fotos y canciones.",
+    description: "Nuestra caja insignia de diseño rígido en tono mostaza y crema. Contiene girasoles y rosas champagne seleccionadas a mano, bombones artesanales y tarjeta vinculada a tu carta con video y canciones.",
     includesNfc: true,
-    composition: ["Girasoles frescos", "Rosas de exportación", "Chocolates finos", "Caja cilíndrica de lujo", "Tarjeta interactiva Canes NFC"]
+    composition: ["Girasoles frescos", "Rosas de exportación", "Chocolates finos", "Caja cilíndrica de lujo", "Tarjeta con dedicatoria multimedia"]
   },
   {
     id: 3,
@@ -97,7 +97,7 @@ const PRODUCTS = [
     image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80",
     description: "Una explosión de alegría con girasoles, gerberas amarillas y follaje aromático. Perfecto para sorprender a esa persona en su día.",
     includesNfc: true,
-    composition: ["Girasoles", "Gerberas multicolores", "Topper 'Feliz Día'", "Tarjeta NFC con video saludo"]
+    composition: ["Girasoles", "Gerberas multicolores", "Topper 'Feliz Día'", "Tarjeta con carta y video saludo"]
   },
   {
     id: 6,
@@ -112,7 +112,7 @@ const PRODUCTS = [
     image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=80",
     description: "Girasol y follajes preservados bajo cúpula de cristal templado. Un recuerdo inolvidable que conserva su esplendor durante más de un año sin necesidad de agua.",
     includesNfc: true,
-    composition: ["Girasol preservado 100% natural", "Cúpula de vidrio con base de madera", "Iluminación cálida micro-LED", "Tarjeta NFC"]
+    composition: ["Girasol preservado 100% natural", "Cúpula de vidrio con base de madera", "Iluminación cálida micro-LED", "Tarjeta con dedicatoria"]
   },
   {
     id: 7,
@@ -142,7 +142,7 @@ const PRODUCTS = [
     image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80",
     description: "Arreglo de lujo en caja acrílica transparente con orquídeas blancas, rosas y detalles dorados. Para momentos verdaderamente trascendentes.",
     includesNfc: true,
-    composition: ["Orquídea viva", "Rosas premium", "Caja acrílica de lujo", "Tarjeta NFC programada"]
+    composition: ["Orquídea viva", "Rosas premium", "Caja acrílica de lujo", "Tarjeta con carta digital"]
   }
 ];
 
@@ -163,7 +163,7 @@ const TESTIMONIALS = [
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
     rating: 5,
     date: "Hace 3 días",
-    comment: "Los girasoles llegaron súper frescos, se notaba que los cortaron el mismo día. Pero lo que hizo llorar a mi mamá fue la tarjeta NFC: acercó su celular y salió el video que le grabamos con mis hermanos desde Lima. ¡Una experiencia única en Cajamarca!",
+    comment: "Los girasoles llegaron súper frescos, se notaba que los cortaron el mismo día. Pero lo que hizo llorar a mi mamá fue la carta digital que acompañaba el ramo: acercó su celular a la tarjeta y salió el video que le grabamos con mis hermanos desde Lima. ¡Una experiencia única en Cajamarca!",
     productName: "Caja Canes Girasoles & Amor"
   },
   {

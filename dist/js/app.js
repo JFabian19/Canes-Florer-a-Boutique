@@ -21,7 +21,7 @@ const DEFAULT_CATEGORIES = [
   { id: "girasoles", name: "Edición Girasoles 🌻" },
   { id: "romance", name: "Rosas & Romance 🌹" },
   { id: "silvestres", name: "Silvestres Andinos 🌿" },
-  { id: "cajas", name: "Cajas de Autor & NFC 🎁" },
+  { id: "cajas", name: "Cajas de Autor & Carta 🎁" },
   { id: "cumpleanos", name: "Cumpleaños & Fiestas 🎂" }
 ];
 
@@ -37,24 +37,24 @@ const DEFAULT_PRODUCTS = [
     rating: 5.0,
     reviewsCount: 38,
     image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80",
-    description: "Inspirado en el cielo radiante de los valles cajamarquinos. Ramo con 7 girasoles de primera selección, mimosas amarillas silvestres, eucalipto fresco y tarjeta interactiva NFC Canes incluida.",
+    description: "Inspirado en el cielo radiante de los valles cajamarquinos. Ramo con 7 girasoles de primera selección, mimosas amarillas silvestres, eucalipto fresco y tarjeta con dedicatoria digital multimedia incluida.",
     includesNfc: true,
-    composition: ["7 Girasoles gigantes", "Follaje de Eucalipto andino", "Mimosas amarillas", "Papel kraft premium & cinta de lino", "Tarjeta inteligente NFC"]
+    composition: ["7 Girasoles gigantes", "Follaje de Eucalipto andino", "Mimosas amarillas", "Papel kraft premium & cinta de lino", "Tarjeta con dedicatoria multimedia"]
   },
   {
     id: 2,
     name: "Caja Canes Girasoles & Amor",
     category: "cajas",
-    tag: "Exclusivo NFC",
+    tag: "Con Carta Digital 💌",
     isFeatured: true,
     price: 180.00,
     oldPrice: 210.00,
     rating: 4.9,
     reviewsCount: 42,
     image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?auto=format&fit=crop&w=800&q=80",
-    description: "Nuestra caja insignia de diseño rígido en tono mostaza y crema. Contiene girasoles y rosas champagne seleccionadas a mano, bombones artesanales y tarjeta NFC programada con tus fotos y canciones.",
+    description: "Nuestra caja insignia de diseño rígido en tono mostaza y crema. Contiene girasoles y rosas champagne seleccionadas a mano, bombones artesanales y tarjeta vinculada a tu carta con video y canciones.",
     includesNfc: true,
-    composition: ["Girasoles frescos", "Rosas de exportación", "Chocolates finos", "Caja cilíndrica de lujo", "Tarjeta interactiva Canes NFC"]
+    composition: ["Girasoles frescos", "Rosas de exportación", "Chocolates finos", "Caja cilíndrica de lujo", "Tarjeta con dedicatoria multimedia"]
   },
   {
     id: 3,
@@ -99,7 +99,7 @@ const DEFAULT_PRODUCTS = [
     image: "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80",
     description: "Una explosión de alegría con girasoles, gerberas amarillas y follaje aromático. Perfecto para sorprender a esa persona en su día.",
     includesNfc: true,
-    composition: ["Girasoles", "Gerberas multicolores", "Topper 'Feliz Día'", "Tarjeta NFC con video saludo"]
+    composition: ["Girasoles", "Gerberas multicolores", "Topper 'Feliz Día'", "Tarjeta con carta y video saludo"]
   },
   {
     id: 6,
@@ -114,7 +114,7 @@ const DEFAULT_PRODUCTS = [
     image: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=800&q=80",
     description: "Girasol y follajes preservados bajo cúpula de cristal templado. Un recuerdo inolvidable que conserva su esplendor durante más de un año sin necesidad de agua.",
     includesNfc: true,
-    composition: ["Girasol preservado 100% natural", "Cúpula de vidrio con base de madera", "Iluminación cálida micro-LED", "Tarjeta NFC"]
+    composition: ["Girasol preservado 100% natural", "Cúpula de vidrio con base de madera", "Iluminación cálida micro-LED", "Tarjeta con dedicatoria"]
   },
   {
     id: 7,
@@ -144,7 +144,7 @@ const DEFAULT_PRODUCTS = [
     image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80",
     description: "Arreglo de lujo en caja acrílica transparente con orquídeas blancas, rosas y detalles dorados. Para momentos verdaderamente trascendentes.",
     includesNfc: true,
-    composition: ["Orquídea viva", "Rosas premium", "Caja acrílica de lujo", "Tarjeta NFC programada"]
+    composition: ["Orquídea viva", "Rosas premium", "Caja acrílica de lujo", "Tarjeta con carta digital"]
   }
 ];
 
@@ -165,7 +165,7 @@ const DEFAULT_TESTIMONIALS = [
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
     rating: 5,
     date: "Hace 3 días",
-    comment: "Los girasoles llegaron súper frescos, se notaba que los cortaron el mismo día. Pero lo que hizo llorar a mi mamá fue la tarjeta NFC: acercó su celular y salió el video que le grabamos con mis hermanos desde Lima. ¡Una experiencia única en Cajamarca!",
+    comment: "Los girasoles llegaron súper frescos, se notaba que los cortaron el mismo día. Pero lo que hizo llorar a mi mamá fue la carta digital que acompañaba el ramo: acercó su celular a la tarjeta y salió el video que le grabamos con mis hermanos desde Lima. ¡Una experiencia única en Cajamarca!",
     productName: "Caja Canes Girasoles & Amor"
   },
   {
@@ -226,7 +226,6 @@ if (typeof document !== 'undefined') {
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bootApp);
   } else {
-    // Si el DOM ya cargó, arrancar de inmediato
     bootApp();
   }
 }
@@ -254,7 +253,7 @@ function initIntroCurtain() {
     const bar = curtain.querySelector('.intro-bar-progress');
     if (bar) {
       bar.style.animation = 'none';
-      void bar.offsetHeight; // forzar reflow
+      void bar.offsetHeight;
       bar.style.animation = 'progressFill 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards';
     }
 
@@ -326,10 +325,9 @@ function renderProducts() {
         <img class="product-image" src="${product.image}" alt="${product.name}" loading="lazy" />
         <span class="product-badge-tag">${product.tag}</span>
         ${product.includesNfc ? `
-          <div class="product-nfc-indicator" title="Incluye Tarjeta Interactiva NFC">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
-              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+          <div class="product-nfc-indicator" title="Incluye Carta Digital con Video y Canción">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
           </div>
         ` : ''}
@@ -500,7 +498,7 @@ function renderCartDrawerContent() {
         `).join('')}
       </select>
 
-      <textarea id="checkout-dedication" class="checkout-input" rows="2" placeholder="Dedicatoria o mensaje para la tarjeta NFC / impresa"></textarea>
+      <textarea id="checkout-dedication" class="checkout-input" rows="2" placeholder="Dedicatoria para la carta multimedia o tarjeta impresa"></textarea>
     </div>
   `;
 
@@ -636,7 +634,7 @@ function handleWhatsAppCheckout() {
     msg += `\n📍 *Dirección en Cajamarca:* ${address}`;
   }
   if (dedication) {
-    msg += `\n💌 *Dedicatoria para la tarjeta:* "${dedication}"`;
+    msg += `\n💌 *Dedicatoria para la carta multimedia:* "${dedication}"`;
   }
 
   msg += `\n\n✨ _Acepto pagar vía Yape, Plin o Transferencia BCP/BBVA. ¿Tienen disponibilidad para hoy?_`;
@@ -647,13 +645,12 @@ function handleWhatsAppCheckout() {
 }
 
 // ==========================================================================
-// SIMULADOR INTERACTIVO NFC
+// SIMULADOR DE CARTA FLORAL
 // ==========================================================================
 function initNfcSimulator() {
   const tapTrigger = document.getElementById('sim-tap-trigger');
   const tapPrompt = document.getElementById('sim-tap-prompt');
   const resetBtn = document.getElementById('sim-reset-btn');
-  const mustardCard = document.getElementById('hero-mustard-card');
 
   const revealNfcContent = () => {
     if (tapPrompt) {
@@ -675,16 +672,6 @@ function initNfcSimulator() {
 
   if (resetBtn) {
     resetBtn.addEventListener('click', hideNfcContent);
-  }
-
-  if (mustardCard) {
-    mustardCard.addEventListener('click', () => {
-      const section = document.getElementById('experiencia-nfc');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-        setTimeout(revealNfcContent, 600);
-      }
-    });
   }
 }
 
