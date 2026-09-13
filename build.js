@@ -18,6 +18,17 @@ if (fs.existsSync(path.join(__dirname, 'carta.html'))) {
   fs.copyFileSync(path.join(__dirname, 'carta.html'), path.join(distDir, 'carta.html'));
 }
 
+// Copiar _redirects
+if (fs.existsSync(path.join(__dirname, '_redirects'))) {
+  fs.copyFileSync(path.join(__dirname, '_redirects'), path.join(distDir, '_redirects'));
+}
+
+// Copiar carpeta carta (rutas dedicadas como /carta/caj-8492/)
+const cartaDir = path.join(__dirname, 'carta');
+if (fs.existsSync(cartaDir)) {
+  fs.cpSync(cartaDir, path.join(distDir, 'carta'), { recursive: true });
+}
+
 // Copiar carpeta css
 const cssDir = path.join(__dirname, 'css');
 if (fs.existsSync(cssDir)) {

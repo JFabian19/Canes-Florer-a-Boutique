@@ -3,663 +3,522 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tu Carta Floral • Canes Florería Boutique Cajamarca</title>
-  <meta name="description" content="Una dedicatoria especial que acompaña tus flores frescas de Canes Florería en Cajamarca." />
+  <title>Una dedicatoria para Valeria 🌻 • Canes Florería Cajamarca</title>
+  <meta name="description" content="Dedicatoria personalizada entregada con flores frescas de Canes Florería Boutique en Cajamarca." />
 
   <!-- Tipografías de alta estética editorial -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css" />
   <style>
-    /* Estilos exclusivos para la página de la carta personalizada */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-yellow: #F5B82E;
+      --color-yellow-dark: #D99B16;
+      --color-cream-bg: #F7F3EB;
+      --color-cream-card: #FFFDF9;
+      --color-espresso: #1C1917;
+      --color-espresso-soft: #2E2721;
+      --color-muted: #786C5B;
+      --color-border: #E8DFD0;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-script: 'Caveat', cursive;
+    }
+
     body {
-      background-color: #F7F3EB;
-      color: #1C1917;
+      background-color: var(--color-cream-bg);
+      color: var(--color-espresso);
+      font-family: var(--font-sans);
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      padding: 2rem 1.25rem 5rem;
     }
 
-    .letter-page-wrapper {
-      max-width: 760px;
+    .letter-container {
+      max-width: 720px;
       margin: 0 auto;
-      padding: 2.5rem 1.25rem 5rem;
       width: 100%;
     }
 
-    /* Barra superior de la carta */
-    .letter-top-nav {
+    .letter-header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding-bottom: 1.25rem;
       margin-bottom: 2rem;
-      padding-bottom: 1rem;
       border-bottom: 1px solid #E5DDCF;
     }
 
-    .letter-back-link {
+    .back-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-size: 0.85rem;
+      color: var(--color-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
       font-weight: 600;
-      color: #5C5449;
-      transition: color 0.2s ease;
+      transition: color 0.2s;
     }
 
-    .letter-back-link:hover {
-      color: #D99B16;
+    .back-btn:hover {
+      color: var(--color-yellow-dark);
     }
 
-    .letter-code-pill {
-      background: #FAF7F0;
-      border: 1px solid #DED4C3;
-      padding: 0.3rem 0.8rem;
+    .order-code-badge {
+      background: #FFF;
+      border: 1px solid var(--color-border);
+      padding: 0.35rem 0.85rem;
       border-radius: 9999px;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      color: #786C5B;
+      color: var(--color-muted);
       letter-spacing: 0.05em;
     }
 
-    /* Sobre interactivo / Tarjeta de presentación */
-    .letter-envelope-card {
-      background: #FFFDF9;
-      border-radius: 24px;
-      border: 1px solid #E8DFD0;
-      box-shadow: 0 15px 40px rgba(35, 27, 18, 0.06);
+    .card-letter {
+      background: var(--color-cream-card);
+      border-radius: 28px;
+      border: 1px solid var(--color-border);
+      box-shadow: 0 20px 50px rgba(35, 27, 18, 0.08);
       overflow: hidden;
-      margin-bottom: 2.5rem;
-      position: relative;
     }
 
-    .envelope-header {
-      background: linear-gradient(135deg, #F5B82E, #E2A31B);
-      padding: 2rem 1.5rem;
+    .card-banner {
+      background: linear-gradient(135deg, #F5B82E, #E5A519);
+      padding: 2.2rem 1.75rem;
       text-align: center;
-      color: #1C1917;
-      position: relative;
+      color: var(--color-espresso);
     }
 
-    .envelope-header::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 24px;
-      height: 24px;
-      background: #E2A31B;
-      clip-path: polygon(50% 100%, 0 0, 100% 0);
-    }
-
-    .envelope-florist-tag {
+    .card-tagline {
       font-size: 0.72rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
     }
 
-    .envelope-headline {
+    .card-headline {
       font-family: var(--font-serif);
-      font-size: 2.2rem;
+      font-size: 2.3rem;
       font-weight: 700;
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
-    .envelope-headline em {
+    .card-headline em {
       font-style: italic;
     }
 
-    /* Contenido de la carta */
-    .letter-body {
-      padding: 2.5rem 2rem 2rem;
+    .card-content {
+      padding: 2.5rem 2.25rem 2rem;
     }
 
-    .letter-meta-row {
+    .meta-recipient-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       flex-wrap: wrap;
       gap: 1rem;
       padding-bottom: 1.5rem;
-      border-bottom: 1px dashed #E0D6C5;
-      margin-bottom: 2rem;
+      border-bottom: 1px dashed #E2D7C5;
+      margin-bottom: 2.2rem;
     }
 
-    .letter-recipient-box h3 {
+    .recipient-info h2 {
       font-family: var(--font-serif);
-      font-size: 1.6rem;
+      font-size: 1.85rem;
       font-weight: 700;
-      color: #1C1917;
+      color: var(--color-espresso);
       line-height: 1.1;
     }
 
-    .letter-recipient-box span {
-      font-size: 0.85rem;
-      color: #786C5B;
+    .recipient-info span {
+      font-size: 0.9rem;
+      color: var(--color-muted);
     }
 
-    .letter-occasion-tag {
+    .occasion-pill {
       background-color: #FEF3D6;
       color: #946200;
       border: 1px solid #F7D78A;
-      padding: 0.4rem 1rem;
+      padding: 0.4rem 1.1rem;
       border-radius: 9999px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
     }
 
-    .letter-message-content {
+    .letter-message {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
-      line-height: 1.8;
-      color: #2A241E;
-      margin-bottom: 2.5rem;
+      font-size: 1.4rem;
+      line-height: 1.85;
+      color: var(--color-espresso-soft);
       position: relative;
-      padding: 0 1rem;
+      margin-bottom: 2rem;
+      padding: 0 0.5rem;
     }
 
-    .letter-message-content::before {
+    .letter-message::before {
       content: '“';
       position: absolute;
-      top: -20px;
-      left: -10px;
-      font-size: 4.5rem;
-      color: #EADDC9;
+      top: -24px;
+      left: -14px;
+      font-size: 5rem;
+      color: #EBDDC8;
       font-family: Georgia, serif;
       line-height: 1;
       pointer-events: none;
     }
 
-    .letter-handwritten-signature {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      color: #D99B16;
+    .letter-signature {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: var(--color-yellow-dark);
       text-align: right;
-      margin-top: 1rem;
+      margin-bottom: 2.5rem;
     }
 
-    /* Sección de Video */
-    .letter-media-section {
-      margin-top: 2rem;
+    .section-block {
+      margin-top: 2.5rem;
       padding-top: 2rem;
       border-top: 1px solid #EFE8DC;
     }
 
-    .media-section-title {
+    .block-title {
       font-family: var(--font-serif);
-      font-size: 1.45rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #1C1917;
-      margin-bottom: 0.5rem;
+      color: var(--color-espresso);
+      margin-bottom: 0.4rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
-    .media-section-title svg {
-      width: 20px;
-      height: 20px;
-      color: #D99B16;
+    .block-title svg {
+      width: 22px;
+      height: 22px;
+      color: var(--color-yellow-dark);
     }
 
-    .media-subtitle {
-      font-size: 0.88rem;
-      color: #786C5B;
+    .block-subtitle {
+      font-size: 0.9rem;
+      color: var(--color-muted);
       margin-bottom: 1.25rem;
     }
 
-    .video-card-container {
-      border-radius: 18px;
+    .video-wrapper {
+      border-radius: 20px;
       overflow: hidden;
       background: #000;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      position: relative;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
       aspect-ratio: 16 / 9;
       max-height: 420px;
     }
 
-    .video-card-container video {
+    .video-wrapper video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    /* Reproductor de Spotify */
-    .spotify-widget-container {
+    .spotify-box {
       margin-top: 2.5rem;
       background: #FFF;
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 1.5rem;
-      border: 1px solid #E8DFD0;
+      border: 1px solid var(--color-border);
       box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     }
 
-    .spotify-widget-header {
+    .spotify-meta-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 1rem;
     }
 
-    .spotify-brand-badge {
+    .spotify-brand {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
       font-size: 0.78rem;
-      font-weight: 700;
+      font-weight: 800;
       color: #1DB954;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
-    .spotify-brand-badge svg {
-      width: 18px;
-      height: 18px;
+    .spotify-brand svg {
+      width: 20px;
+      height: 20px;
     }
 
-    /* Galería de Fotos Recuerdos */
-    .memories-grid {
+    .spotify-song-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-espresso);
+      margin-top: 0.2rem;
+    }
+
+    .polaroids-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.25rem;
+      gap: 1.5rem;
       margin-top: 1.25rem;
     }
 
-    .polaroid-card {
+    .polaroid {
       background: #FFF;
-      padding: 0.75rem 0.75rem 1.25rem;
+      padding: 0.85rem 0.85rem 1.4rem;
       border-radius: 8px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
       border: 1px solid #EFE8DC;
-      transform: rotate(-1.5deg);
       transition: transform 0.3s ease;
     }
 
-    .polaroid-card:nth-child(2) {
-      transform: rotate(1.5deg);
+    .polaroid:nth-child(1) {
+      transform: rotate(-2deg);
     }
 
-    .polaroid-card:hover {
+    .polaroid:nth-child(2) {
+      transform: rotate(2deg);
+    }
+
+    .polaroid:hover {
       transform: rotate(0deg) scale(1.03);
       z-index: 2;
     }
 
-    .polaroid-img {
+    .polaroid img {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 4px;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.75rem;
     }
 
-    .polaroid-caption {
-      font-family: 'Caveat', cursive;
-      font-size: 1.15rem;
+    .polaroid p {
+      font-family: var(--font-script);
+      font-size: 1.25rem;
       color: #4A4237;
       text-align: center;
       line-height: 1.2;
     }
 
-    /* Pie de carta con sello de la florería */
-    .letter-florist-seal {
+    .florist-signature-box {
       margin-top: 3.5rem;
-      padding: 2rem;
+      padding: 2.25rem 1.5rem;
       background: #FAF5EB;
-      border-radius: 20px;
-      border: 1px solid #E8DECE;
+      border-radius: 22px;
+      border: 1px solid #E6DCCD;
       text-align: center;
     }
 
-    .florist-seal-icon {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 0.75rem;
-      background: #F5B82E;
+    .florist-icon-circle {
+      width: 52px;
+      height: 52px;
+      background: var(--color-yellow);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #1C1917;
+      color: var(--color-espresso);
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 15px rgba(245, 184, 46, 0.35);
     }
 
-    .florist-seal-icon svg {
-      width: 26px;
-      height: 26px;
+    .florist-icon-circle svg {
+      width: 28px;
+      height: 28px;
     }
 
-    .florist-seal-text h4 {
+    .florist-signature-box h3 {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: #1C1917;
-      margin-bottom: 0.25rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-espresso);
+      margin-bottom: 0.35rem;
     }
 
-    .florist-seal-text p {
-      font-size: 0.85rem;
-      color: #786C5B;
-      max-width: 460px;
+    .florist-signature-box p {
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      max-width: 480px;
       margin: 0 auto 1.5rem;
     }
 
-    .btn-send-flowers {
+    .btn-return-store {
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
-      background-color: #1C1917;
+      background-color: var(--color-espresso);
       color: #FFF;
+      text-decoration: none;
       font-weight: 700;
-      font-size: 0.9rem;
-      padding: 0.85rem 1.75rem;
+      font-size: 0.92rem;
+      padding: 0.9rem 2rem;
       border-radius: 9999px;
       transition: all 0.3s ease;
     }
 
-    .btn-send-flowers:hover {
-      background-color: #F5B82E;
-      color: #1C1917;
+    .btn-return-store:hover {
+      background-color: var(--color-yellow);
+      color: var(--color-espresso);
       transform: translateY(-2px);
     }
 
-    /* Selector de historias de demostración */
-    .demo-switcher {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-
-    .demo-pill-btn {
-      background: #FFF;
-      border: 1px solid #DCD2C2;
-      border-radius: 9999px;
-      padding: 0.4rem 0.9rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #5C5449;
-      transition: all 0.2s ease;
-    }
-
-    .demo-pill-btn.active {
-      background: #F5B82E;
-      border-color: #F5B82E;
-      color: #1C1917;
-      font-weight: 700;
-    }
-
     @media (max-width: 600px) {
-      .letter-body {
+      .card-content {
         padding: 1.75rem 1.25rem;
       }
-      .envelope-headline {
-        font-size: 1.75rem;
+      .card-headline {
+        font-size: 1.8rem;
       }
-      .letter-message-content {
-        font-size: 1.15rem;
+      .letter-message {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="letter-page-wrapper">
-    <!-- Navegación superior -->
-    <header class="letter-top-nav">
-      <a href="index.html" class="letter-back-link">
+  <div class="letter-container">
+    <nav class="letter-header-bar">
+      <a href="index.html" class="back-btn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="m15 18-6-6 6-6"/>
         </svg>
         <span>Volver a Canes Florería</span>
       </a>
 
-      <div class="letter-code-pill" id="display-order-code">
+      <div class="order-code-badge" id="order-badge">
         Ramo #CJM-8492
       </div>
-    </header>
+    </nav>
 
-    <!-- Selector de historias reales de Cajamarca -->
-    <div class="demo-switcher">
-      <span style="font-size: 0.78rem; color: #786C5B; font-weight: 600;">Historias entregadas en Cajamarca:</span>
-      <button class="demo-pill-btn active" data-story="aniversario">3er Aniversario 🌻</button>
-      <button class="demo-pill-btn" data-story="mama">Para Mamá en Baños del Inca 🌸</button>
-      <button class="demo-pill-btn" data-story="distancia">Amor a Distancia (Lima - Cajamarca) ✈️</button>
-    </div>
-
-    <!-- Contenedor Principal de la Carta -->
-    <main class="letter-envelope-card">
-      <div class="envelope-header">
-        <p class="envelope-florist-tag">Canes Florería Boutique • Cajamarca</p>
-        <h1 class="envelope-headline">Una dedicatoria que <em>florece contigo</em></h1>
+    <main class="card-letter">
+      <div class="card-banner">
+        <p class="card-tagline">Canes Florería Boutique • Cajamarca</p>
+        <h1 class="card-headline">Una dedicatoria que <em>florece contigo</em></h1>
       </div>
 
-      <article class="letter-body">
-        <!-- De quién y para quién -->
-        <div class="letter-meta-row">
-          <div class="letter-recipient-box">
-            <span id="story-sender">De: Mateo</span>
-            <h3 id="story-recipient">Para: Valeria</h3>
+      <article class="card-content">
+        <div class="meta-recipient-row">
+          <div class="recipient-info">
+            <span>De: Mateo</span>
+            <h2>Para: Valeria</h2>
           </div>
-          <span class="letter-occasion-tag" id="story-occasion">3er Aniversario 🌻</span>
+          <span class="occasion-pill">3er Aniversario 🌻</span>
         </div>
 
-        <!-- Mensaje de amor escrito -->
-        <div class="letter-message-content" id="story-message">
+        <p class="letter-message">
           Valeria, todavía recuerdo aquella tarde caminando por las escalinatas de Santa Apolonia y cómo tus ojos reflejaban la luz dorada del sol sobre Cajamarca. Hoy quise enviarte estos girasoles para recordarte que, sin importar el tiempo ni los desafíos, mi corazón florece contigo cada día. Gracias por ser mi refugio, mi risa y mi lugar favorito en el mundo entero. Esta canción siempre será nuestra. Te amo con toda mi alma.
-        </div>
+        </p>
 
-        <div class="letter-handwritten-signature" id="story-signature">
+        <div class="letter-signature">
           Con amor infinito, Mateo ♡
         </div>
 
-        <!-- Sección de Video Personal -->
-        <section class="letter-media-section">
-          <h2 class="media-section-title">
+        <!-- Video de dedicatoria -->
+        <section class="section-block">
+          <h3 class="block-title">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <polygon points="6 3 20 12 6 21 6 3"/>
             </svg>
             <span>Un video para ti</span>
-          </h2>
-          <p class="media-subtitle">Presiona play para revivir este momento grabado especialmente para ti.</p>
+          </h3>
+          <p class="block-subtitle">Un momento especial grabado para ti con todo mi cariño.</p>
 
-          <div class="video-card-container">
-            <video id="story-video" controls poster="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80" loop playsinline>
-              <!-- Video de prueba con girasoles meciéndose y luz cálida -->
+          <div class="video-wrapper">
+            <video controls poster="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80" loop playsinline>
               <source src="https://assets.mixkit.co/videos/preview/mixkit-sunflower-field-under-the-blue-sky-4240-large.mp4" type="video/mp4">
-              Tu navegador no soporta reproducción de video.
+              Tu navegador no reproduce videos.
             </video>
           </div>
         </section>
 
-        <!-- Sección de Canción en Spotify -->
-        <section class="spotify-widget-container">
-          <div class="spotify-widget-header">
+        <!-- Canción en Spotify -->
+        <section class="spotify-box">
+          <div class="spotify-meta-top">
             <div>
-              <span class="spotify-brand-badge">
+              <span class="spotify-brand">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
                 </svg>
                 <span>Nuestra Canción en Spotify</span>
               </span>
-              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: #1C1917; margin-top: 0.25rem;" id="spotify-song-title">
-                Yellow — Coldplay
-              </h3>
+              <h4 class="spotify-song-name">Yellow — Coldplay</h4>
             </div>
-            <span style="font-size: 0.75rem; color: #786C5B;">Sonando en tu entrega</span>
+            <span style="font-size: 0.75rem; color: var(--color-muted);">Vinculada a tus flores</span>
           </div>
 
-          <!-- Reproductor embebido oficial de Spotify -->
-          <iframe id="spotify-embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3AJwUDP919kvQ9QcozQPxg?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3AJwUDP919kvQ9QcozQPxg?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </section>
 
-        <!-- Galería de Recuerdos en Fotos -->
-        <section class="letter-media-section">
-          <h2 class="media-section-title">
+        <!-- Galería de recuerdos -->
+        <section class="section-block">
+          <h3 class="block-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
               <circle cx="9" cy="9" r="2"/>
               <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
             </svg>
             <span>Nuestros recuerdos juntos</span>
-          </h2>
-          <p class="media-subtitle">Momentos que guardamos en el alma.</p>
+          </h3>
+          <p class="block-subtitle">Momentos que atesoro con todo el corazón.</p>
 
-          <div class="memories-grid" id="story-photos-grid">
-            <div class="polaroid-card">
-              <img class="polaroid-img" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80" alt="Recuerdo juntos" />
-              <p class="polaroid-caption">Mirador Santa Apolonia ♡</p>
+          <div class="polaroids-grid">
+            <div class="polaroid">
+              <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80" alt="Mirador Santa Apolonia" />
+              <p>Mirador Santa Apolonia ♡</p>
             </div>
-            <div class="polaroid-card">
-              <img class="polaroid-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Nuestra primera salida" />
-              <p class="polaroid-caption">Caminando por Cajamarca ✨</p>
+            <div class="polaroid">
+              <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80" alt="Caminando por Cajamarca" />
+              <p>Caminando por Cajamarca ✨</p>
             </div>
           </div>
         </section>
       </article>
 
-      <!-- Sello de la florería -->
-      <footer class="letter-florist-seal">
-        <div class="florist-seal-icon">
+      <footer class="florist-signature-box">
+        <div class="florist-icon-circle">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <circle cx="12" cy="12" r="3" />
             <path d="M12 2a4 4 0 0 0-4 4c0 2 4 6 4 6s4-4 4-6a4 4 0 0 0-4-4Zm0 20a4 4 0 0 0 4-4c0-2-4-6-4-6s-4 4-4 6a4 4 0 0 0 4 4Zm10-10a4 4 0 0 0-4-4c-2 0-6 4-6 4s4 4 6 4a4 4 0 0 0 4-4ZM2 12a4 4 0 0 0 4 4c2 0 6-4 6-4s-4-4-6-4a4 4 0 0 0-4 4Z"/>
           </svg>
         </div>
-        <div class="florist-seal-text">
-          <h4>Canes Florería Boutique • Cajamarca</h4>
-          <p>
-            Este arreglo floral fue diseñado artesanalmente con flores frescas recolectadas hoy en los valles de Cajamarca. Cada detalle fue cuidado con devoción.
-          </p>
-          <a href="index.html#catalogo" class="btn-send-flowers">
-            <span>¿Deseas enviar flores como estas en Cajamarca?</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="m9 18 6-6-6-6"/>
-            </svg>
-          </a>
-        </div>
+        <h3>Canes Florería Boutique • Cajamarca</h3>
+        <p>
+          Este arreglo floral fue preparado artesanalmente con flores frescas de los valles de Cajamarca. Entregado con amor en Jr. Dos de Mayo 482.
+        </p>
+        <a href="index.html" class="btn-return-store">
+          <span>Ver arreglos en Canes Florería</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+        </a>
       </footer>
     </main>
   </div>
 
   <script>
-    // Generación de código aleatorio de pedido si no existe
-    const randomCodes = ['CJM-8492', 'CJM-9104', 'CJM-7321', 'CJM-5518', 'CJM-6289'];
-    const urlParams = new URLSearchParams(window.location.search);
-    const orderCode = urlParams.get('codigo') || urlParams.get('id') || randomCodes[Math.floor(Math.random() * randomCodes.length)];
-    const codeEl = document.getElementById('display-order-code');
-    if (codeEl) codeEl.textContent = 'Ramo #' + orderCode;
-
-    // Base de datos de historias reales para alternar
-    const STORIES = {
-      aniversario: {
-        sender: "De: Mateo",
-        recipient: "Para: Valeria",
-        occasion: "3er Aniversario 🌻",
-        message: "Valeria, todavía recuerdo aquella tarde caminando por las escalinatas de Santa Apolonia y cómo tus ojos reflejaban la luz dorada del sol sobre Cajamarca. Hoy quise enviarte estos girasoles para recordarte que, sin importar el tiempo ni los desafíos, mi corazón florece contigo cada día. Gracias por ser mi refugio, mi risa y mi lugar favorito en el mundo entero. Esta canción siempre será nuestra. Te amo con toda mi alma.",
-        signature: "Con amor infinito, Mateo ♡",
-        songTitle: "Yellow — Coldplay",
-        spotifyTrackId: "3AJwUDP919kvQ9QcozQPxg",
-        videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-sunflower-field-under-the-blue-sky-4240-large.mp4",
-        videoPoster: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80",
-        photos: [
-          { url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80", caption: "Mirador Santa Apolonia ♡" },
-          { url: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80", caption: "Caminando por Cajamarca ✨" }
-        ]
-      },
-      mama: {
-        sender: "De: Sofía & Carlos",
-        recipient: "Para: Mamá Carmen",
-        occasion: "Feliz Cumpleaños Mamá 🌸",
-        message: "¡Feliz cumpleaños mamita querida! Aunque el trabajo a veces nos tenga con poco tiempo, queríamos que hoy tu casa en Baños del Inca se llenara de la misma alegría y color que tú nos has regalado toda la vida. Eres la mujer más fuerte y cariñosa del universo. Disfruta tus flores favoritas y esta canción que siempre cantas al regar tus plantas.",
-        signature: "Tus hijos que te adoran, Sofía y Carlos 🌷",
-        songTitle: "Acróstico — Shakira",
-        spotifyTrackId: "3hUxzQiv5Mpds3MGQ2fPgw",
-        videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-bright-sunflowers-in-a-field-4241-large.mp4",
-        videoPoster: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
-        photos: [
-          { url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80", caption: "Nuestra madre hermosa 💕" },
-          { url: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80", caption: "Tus flores preferidas" }
-        ]
-      },
-      distancia: {
-        sender: "De: Alejandro (Desde Lima)",
-        recipient: "Para: Fiorella (Cajamarca)",
-        occasion: "Te Extraño Mucho ✈️",
-        message: "Mi Fio, aunque hoy nos separen kilómetros entre la costa y la hermosa sierra de Cajamarca, cada latido mío está contigo. Te envío estos girasoles para que iluminen tu escritorio como tú iluminas mis días en cada llamada. Ya falta muy poco para volver a abrazarnos en la Plaza de Armas. Te amo gigante.",
-        signature: "Siempre tuyo, Ale ✨",
-        songTitle: "Photograph — Ed Sheeran",
-        spotifyTrackId: "1HNkqx9Ahdgi1Ixy2xkKkL",
-        videoSrc: "https://assets.mixkit.co/videos/preview/mixkit-sunflower-field-under-the-blue-sky-4240-large.mp4",
-        videoPoster: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80",
-        photos: [
-          { url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80", caption: "Contando los días para vernos ✈️" },
-          { url: "https://images.unsplash.com/photo-1508610048659-a06b669e3321?auto=format&fit=crop&w=600&q=80", caption: "Juntos pronto ♡" }
-        ]
-      }
-    };
-
-    function loadStory(key) {
-      const data = STORIES[key];
-      if (!data) return;
-
-      document.getElementById('story-sender').textContent = data.sender;
-      document.getElementById('story-recipient').textContent = data.recipient;
-      document.getElementById('story-occasion').textContent = data.occasion;
-      document.getElementById('story-message').textContent = data.message;
-      document.getElementById('story-signature').textContent = data.signature;
-      document.getElementById('spotify-song-title').textContent = data.songTitle;
-
-      // Actualizar iframe de Spotify
-      const iframe = document.getElementById('spotify-embed-iframe');
-      if (iframe) {
-        iframe.src = `https://open.spotify.com/embed/track/${data.spotifyTrackId}?utm_source=generator&theme=0`;
-      }
-
-      // Actualizar video
-      const video = document.getElementById('story-video');
-      if (video) {
-        video.src = data.videoSrc;
-        video.poster = data.videoPoster;
-        video.load();
-      }
-
-      // Actualizar fotos
-      const photosGrid = document.getElementById('story-photos-grid');
-      if (photosGrid) {
-        photosGrid.innerHTML = data.photos.map(p => `
-          <div class="polaroid-card">
-            <img class="polaroid-img" src="${p.url}" alt="${p.caption}" />
-            <p class="polaroid-caption">${p.caption}</p>
-          </div>
-        `).join('');
-      }
-    }
-
-    // Event listeners para botones de historias
-    document.querySelectorAll('.demo-pill-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.demo-pill-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const storyKey = btn.getAttribute('data-story');
-        loadStory(storyKey);
-      });
-    });
-
-    // Si viene en query param ?historia=mama
-    const urlStory = urlParams.get('historia');
-    if (urlStory && STORIES[urlStory]) {
-      const btn = document.querySelector(`[data-story="${urlStory}"]`);
-      if (btn) {
-        document.querySelectorAll('.demo-pill-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      }
-      loadStory(urlStory);
+    // Si viene un código en la URL o pathname, mostrarlo
+    const pathParts = window.location.pathname.split('/').filter(Boolean);
+    const lastPart = pathParts[pathParts.length - 1];
+    if (lastPart && lastPart !== 'carta.html' && lastPart !== 'carta') {
+      const badge = document.getElementById('order-badge');
+      if (badge) badge.textContent = 'Ramo #' + lastPart.toUpperCase();
     }
   </script>
 </body>
