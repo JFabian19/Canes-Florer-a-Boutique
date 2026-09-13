@@ -1,0 +1,18 @@
+{
+  "name": "canes-floreria-boutique",
+  "version": "1.0.0",
+  "description": "Sitio web de Canes Florería Boutique en Cajamarca",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "floreria",
+    "cajamarca",
+    "girasoles",
+    "nfc"
+  ],
+  "author": "Canes Florería",
+  "license": "MIT"
+}

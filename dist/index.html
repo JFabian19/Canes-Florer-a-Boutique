@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canes Florería Boutique — Cajamarca | Flores que Cuentan Historias</title>
+  <meta name="description" content="Florería boutique de autor en Cajamarca. Arreglos con girasoles, rosas andinas y tarjetas interactivas NFC. Entregas a domicilio hoy en todo Cajamarca y Baños del Inca." />
+  
+  <!-- Tipografías Google Fonts de alta estética editorial -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- =======================================================================
+       PANTALLA DE APARICIÓN / INTRO BLOOM CURTAIN
+       ======================================================================= -->
+  <div id="intro-curtain" class="intro-curtain" aria-label="Pantalla de bienvenida">
+    <div class="intro-content">
+      <div class="intro-flower-icon">
+        <!-- SVG Girasol floreciendo estilizado -->
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="16" fill="#1C1917" />
+          <circle cx="50" cy="50" r="19" stroke="#E2A31B" stroke-width="2" stroke-dasharray="3 3" />
+          <!-- Pétalos dorados -->
+          <g fill="#F5B82E">
+            <ellipse cx="50" cy="20" rx="8" ry="18" />
+            <ellipse cx="50" cy="80" rx="8" ry="18" />
+            <ellipse cx="20" cy="50" rx="18" ry="8" />
+            <ellipse cx="80" cy="50" rx="18" ry="8" />
+            <ellipse cx="28" cy="28" rx="8" ry="18" transform="rotate(-45 28 28)" />
+            <ellipse cx="72" cy="72" rx="8" ry="18" transform="rotate(-45 72 72)" />
+            <ellipse cx="72" cy="28" rx="8" ry="18" transform="rotate(45 72 28)" />
+            <ellipse cx="28" cy="72" rx="8" ry="18" transform="rotate(45 28 72)" />
+          </g>
+        </svg>
+      </div>
+
+      <p class="intro-tagline">Flores también cuentan historias</p>
+      <h2 class="intro-title">Canes Florería <span>Boutique</span></h2>
+      <p class="intro-subtitle">Cajamarca, Perú</p>
+
+      <div class="intro-bar-wrapper">
+        <div class="intro-bar-progress"></div>
+      </div>
+
+      <button id="skip-intro-btn" class="intro-skip-btn" onclick="const c=document.getElementById('intro-curtain'); if(c) c.classList.add('hidden'); document.body.style.overflow='auto';">Saltar intro</button>
+    </div>
+  </div>
+  <script>
+    // Fail-safe garantizado: asegura el retiro del telón tras la animación
+    setTimeout(function() {
+      var c = document.getElementById('intro-curtain');
+      if (c) c.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }, 2300);
+  </script>
+
+  <!-- =======================================================================
+       BARRA DE ANUNCIOS SUPERIOR
+       ======================================================================= -->
+  <aside class="top-bar">
+    <span class="highlight-badge">Cajamarca</span>
+    <span>🌸 Entregas hoy en Baños del Inca, Centro Histórico y alrededores en 60-90 min</span>
+    <span>• Pedidos directos vía WhatsApp</span>
+  </aside>
+
+  <!-- =======================================================================
+       CABECERA Y NAVEGACIÓN
+       ======================================================================= -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="brand-logo" aria-label="Inicio Canes Florería">
+        <div class="brand-icon">
+          <!-- Icono de flor minimalista -->
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2a4 4 0 0 0-4 4c0 2 4 6 4 6s4-4 4-6a4 4 0 0 0-4-4Zm0 20a4 4 0 0 0 4-4c0-2-4-6-4-6s-4 4-4 6a4 4 0 0 0 4 4Zm10-10a4 4 0 0 0-4-4c-2 0-6 4-6 4s4 4 6 4a4 4 0 0 0 4-4ZM2 12a4 4 0 0 0 4 4c2 0 6-4 6-4s-4-4-6-4a4 4 0 0 0-4 4Z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="brand-name">Canes Florería</span>
+          <span class="brand-tag">Cajamarca • De Autor</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#catalogo" class="active">Catálogo</a></li>
+          <li><a href="#experiencia-nfc">Experiencia NFC</a></li>
+          <li><a href="#cobertura">Zonas Cajamarca</a></li>
+          <li><a href="#testimonios">Reseñas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cart-btn trigger-cart" aria-label="Abrir carrito de compras">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+            <path d="M3 6h18"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </button>
+
+        <a href="https://wa.me/51976543210?text=Hola%20Canes%20Florer%C3%ADa%20Cajamarca,%20quisiera%20consultar%20por%20un%20arreglo" target="_blank" rel="noopener noreferrer" class="header-wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>WhatsApp Cajamarca</span>
+        </a>
+
+        <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="Abrir menú">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       HERO EDITORIAL (INSPIRADO EN LA IMAGEN DE REFERENCIA)
+       ======================================================================= -->
+  <section class="hero">
+    <div class="hero-grid">
+      <!-- Texto Principal -->
+      <div class="hero-text-content">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41m14.14-14.14l-1.41 1.41"/>
+          </svg>
+          <span>Florería de Autor en Cajamarca</span>
+        </div>
+
+        <h1 class="hero-title">
+          Flores frescas que <em>cuentan historias</em> inolvidables.
+        </h1>
+
+        <p class="hero-description">
+          Creamos ramos de girasoles radiantes, rosas andinas y composiciones florales únicas. Cada arreglo incluye nuestra <strong>tarjeta interactiva NFC</strong> para que quien reciba las flores descubra un mensaje de amor, fotos y canciones al acercar su teléfono.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#catalogo" class="btn-primary">
+            <span>Explorar Arreglos</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </a>
+
+          <a href="#experiencia-nfc" class="btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="14" height="20" x="5" y="2" rx="2" ry="2"/>
+              <path d="M12 18h.01"/>
+            </svg>
+            <span>Ver Tarjeta Interactiva</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <strong>100%</strong>
+            <span>Flores frescas del día</span>
+          </div>
+          <div class="hero-stat-item">
+            <strong>&lt; 90 min</strong>
+            <span>Reparto en Cajamarca</span>
+          </div>
+          <div class="hero-stat-item">
+            <strong>+1,400</strong>
+            <span>Historias entregadas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Composición Visual: Tarjetas como en la imagen enviada -->
+      <div class="hero-visual-container">
+        <div class="hero-cards-stage">
+          
+          <!-- Tarjeta 1: Crema con girasoles ("La experiencia no termina aquí") -->
+          <div class="boutique-card-cream" aria-hidden="true">
+            <!-- Ilustración botánica SVG de fondo -->
+            <div class="card-sunflower-bg">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="140" r="32" fill="#241E19" />
+                <circle cx="60" cy="140" r="36" stroke="#E2A31B" stroke-width="2" stroke-dasharray="4 4" />
+                <g fill="#F5B82E">
+                  <ellipse cx="60" cy="85" rx="14" ry="32" />
+                  <ellipse cx="60" cy="195" rx="14" ry="32" />
+                  <ellipse cx="5" cy="140" rx="32" ry="14" />
+                  <ellipse cx="115" cy="140" rx="32" ry="14" />
+                  <ellipse cx="20" cy="100" rx="14" ry="32" transform="rotate(-45 20 100)" />
+                  <ellipse cx="100" cy="180" rx="14" ry="32" transform="rotate(-45 100 180)" />
+                  <ellipse cx="100" cy="100" rx="14" ry="32" transform="rotate(45 100 100)" />
+                  <ellipse cx="20" cy="180" rx="14" ry="32" transform="rotate(45 20 180)" />
+                </g>
+              </svg>
+            </div>
+
+            <div class="card-header-tag">
+              FLORES<br>
+              TAMBIÉN<br>
+              CUENTAN<br>
+              HISTORIAS
+            </div>
+
+            <div class="card-center-message">
+              <h4>La experiencia<br>no termina aquí.</h4>
+              <p>ACERCA TU TELÉFONO</p>
+            </div>
+
+            <div class="card-footer-branding">
+              <span>FLORES AMARILLAS</span>
+              CANES • CAJAMARCA
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Mostaza vibrante NFC (Interactiva al hacer click) -->
+          <div class="boutique-card-mustard" id="hero-mustard-card" title="Haz click para simular la experiencia">
+            <div class="card-nfc-header">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 2a4 4 0 0 0-4 4c0 2 4 6 4 6s4-4 4-6a4 4 0 0 0-4-4Zm0 20a4 4 0 0 0 4-4c0-2-4-6-4-6s-4 4-4 6a4 4 0 0 0 4 4Zm10-10a4 4 0 0 0-4-4c-2 0-6 4-6 4s4 4 6 4a4 4 0 0 0 4-4ZM2 12a4 4 0 0 0 4 4c2 0 6-4 6-4s-4-4-6-4a4 4 0 0 0-4 4Z"/>
+              </svg>
+              <span>UN DETALLE MÁS CERCA</span>
+            </div>
+
+            <div class="card-nfc-circle-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect width="12" height="18" x="6" y="3" rx="2" ry="2"/>
+                <path d="M10 7h4"/>
+                <path d="M19 8a5 5 0 0 1 0 8"/>
+                <path d="M22 6a8 8 0 0 1 0 12"/>
+              </svg>
+              <span>NFC</span>
+            </div>
+
+            <div class="card-nfc-action-pill">
+              <span>Acerca tu teléfono</span>
+            </div>
+
+            <div class="card-nfc-features-row">
+              <div class="nfc-feat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                </svg>
+                <span>Mensajes especiales</span>
+              </div>
+              <div class="nfc-feat-divider"></div>
+              <div class="nfc-feat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                  <circle cx="9" cy="9" r="2"/>
+                  <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                </svg>
+                <span>Fotos y recuerdos</span>
+              </div>
+              <div class="nfc-feat-divider"></div>
+              <div class="nfc-feat-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="6 3 20 12 6 21 6 3"/>
+                </svg>
+                <span>Videos y música</span>
+              </div>
+            </div>
+
+            <div class="card-nfc-footer">
+              POWERED BY CANES
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECCIÓN EXPERIENCIA INTERACTIVA NFC
+       ======================================================================= -->
+  <section id="experiencia-nfc" class="section-nfc-experience">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Tecnología & Emoción</span>
+        <h2 class="section-title">El ramo que <span>habla por ti</span></h2>
+        <p class="section-subtitle">
+          Inspirados en conectar a las personas más allá de las flores, cada ramo o caja Canes incluye una tarjeta inteligente de madera o cartulina de autor con chip NFC y código QR.
+        </p>
+      </div>
+
+      <div class="nfc-demo-container">
+        <!-- Explicación de 3 pasos -->
+        <div class="nfc-explanation-cards">
+          <div class="nfc-step-card">
+            <div class="nfc-step-number">1</div>
+            <div class="nfc-step-body">
+              <h4>Elige tu arreglo floral</h4>
+              <p>Selecciona tu ramo favorito de girasoles o rosas cultivadas con esmero en Cajamarca.</p>
+            </div>
+          </div>
+
+          <div class="nfc-step-card">
+            <div class="nfc-step-number">2</div>
+            <div class="nfc-step-body">
+              <h4>Personaliza tu dedicatoria</h4>
+              <p>Envíanos una carta, fotos que amen o el enlace a una canción especial en Spotify. Nosotros vinculamos todo a la tarjeta del ramo.</p>
+            </div>
+          </div>
+
+          <div class="nfc-step-card">
+            <div class="nfc-step-number">3</div>
+            <div class="nfc-step-body">
+              <h4>Magia al recibir el regalo</h4>
+              <p>Al llegar la entrega a su destino en Cajamarca, la persona solo acerca su celular a la tarjeta ¡y la pantalla revela tu mensaje de inmediato!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teléfono interactivo donde el usuario prueba la experiencia -->
+        <div class="phone-mockup-wrapper">
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            
+            <div class="phone-screen">
+              <!-- Capa interactiva de tap NFC -->
+              <div id="sim-tap-prompt" class="sim-nfc-tap-prompt">
+                <div class="sim-tap-circle" id="sim-tap-trigger" title="Presiona para acercar teléfono">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="12" height="18" x="6" y="3" rx="2" ry="2"/>
+                    <path d="M19 8a5 5 0 0 1 0 8"/>
+                    <path d="M22 6a8 8 0 0 1 0 12"/>
+                  </svg>
+                </div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-espresso); margin-bottom: 0.35rem;">
+                  Simulador de Tarjeta NFC
+                </h4>
+                <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1rem;">
+                  Presiona el círculo para simular el acercamiento del teléfono a las flores.
+                </p>
+                <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-primary-dark); text-transform: uppercase; letter-spacing: 0.1em;">
+                  Toca aquí para descubrir
+                </span>
+              </div>
+
+              <!-- Pantalla con la sorpresa revelada -->
+              <div class="phone-screen-inner">
+                <div class="screen-card-hero">
+                  <span class="screen-header-badge">CANES EXPERIENCIA VIVA</span>
+                  <h3>¡Para Valeria con todo mi amor! 🌻</h3>
+                  <img class="screen-memory-photo" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80" alt="Recuerdo especial" />
+                  
+                  <p class="screen-dedication-text">
+                    "Cada girasol de este ramo me recuerda la alegría que trajiste a mi vida desde aquel paseo por Santa Apolonia. ¡Feliz aniversario, mi amor!"
+                  </p>
+
+                  <!-- Canción Spotify pill -->
+                  <div class="screen-spotify-pill">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M8 11.97c3.41-.83 6.64-.47 9.17 1.09M8 9.24c4.27-1.04 8.3-.59 11.47 1.36M8 14.7c2.55-.62 4.96-.35 6.85.82" stroke="#121212" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div class="spotify-meta">
+                      <strong>Yellow — Coldplay</strong>
+                      <span>Nuestra canción sonando en Spotify</span>
+                    </div>
+                  </div>
+
+                  <button id="sim-reset-btn" style="margin-top: 1rem; font-size: 0.75rem; color: var(--color-text-muted); text-decoration: underline;">
+                    ↺ Volver a simular acercamiento
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       CATÁLOGO DE PRODUCTOS
+       ======================================================================= -->
+  <section id="catalogo" class="section-catalog">
+    <div class="section-header">
+      <span class="section-tag">Colección Cajamarca 2026</span>
+      <h2 class="section-title">Arreglos Florales de <span>Autor</span></h2>
+      <p class="section-subtitle">
+        Flores frescas seleccionadas cada mañana. Precios transparentes en Soles (S/.) con tarjeta personalizada incluida.
+      </p>
+    </div>
+
+    <!-- Pestañas de categorías -->
+    <div id="categories-container" class="catalog-categories">
+      <!-- Inyectado por JS -->
+    </div>
+
+    <!-- Grid de productos -->
+    <div id="products-grid" class="products-grid">
+      <!-- Inyectado por JS -->
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       COBERTURA Y ZONAS DE ENTREGA EN CAJAMARCA
+       ======================================================================= -->
+  <section id="cobertura" class="section-delivery">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Envíos Locales</span>
+        <h2 class="section-title">Cobertura Rápida en <span>Cajamarca</span></h2>
+        <p class="section-subtitle">
+          Entregamos personalmente con repartidores de confianza que cuidan la integridad de los arreglos y entregan la sorpresa con máxima calidez.
+        </p>
+      </div>
+
+      <div id="delivery-zones-grid" class="delivery-grid">
+        <!-- Inyectado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       TESTIMONIOS
+       ======================================================================= -->
+  <section id="testimonios" class="section-testimonials">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Clientes Felices</span>
+        <h2 class="section-title">Lo que dicen en <span>Cajamarca</span></h2>
+        <p class="section-subtitle">
+          La emoción de recibir flores frescas con un mensaje que perdura en el corazón.
+        </p>
+      </div>
+
+      <div id="testimonials-grid" class="testimonials-grid">
+        <!-- Inyectado por JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       DRAWER DEL CARRITO
+       ======================================================================= -->
+  <div id="cart-overlay" class="cart-drawer-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Carrito de compras">
+    <div class="drawer-header">
+      <h3>Tu Pedido Floral</h3>
+      <button id="cart-close-btn" class="drawer-close-btn" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div id="cart-drawer-body" class="drawer-body">
+      <!-- Items o estado vacío inyectado por JS -->
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal:</span>
+        <strong id="cart-subtotal-val">S/. 0.00</strong>
+      </div>
+      <div class="cart-summary-line">
+        <span>Envío en Cajamarca:</span>
+        <strong id="cart-delivery-val">S/. 8.00</strong>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Total estimado:</span>
+        <strong id="cart-total-val">S/. 0.00</strong>
+      </div>
+
+      <button id="btn-checkout-wa" class="btn-checkout-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.24-1.48-1.39-1.73-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.17-.48-.29Z"/>
+        </svg>
+        <span>Confirmar Pedido por WhatsApp</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       PIE DE PÁGINA (FOOTER)
+       ======================================================================= -->
+  <footer id="contacto" class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Canes Florería</h4>
+        <p>
+          Boutique floral inspirada en la luz, calidez y poesía de Cajamarca. Hacemos que cada entrega sea una experiencia memorable con flores de calidad de exportación y recuerdos vivos.
+        </p>
+        <p><strong>Ubicación:</strong> Jr. Dos de Mayo 482, Cajamarca (A pasos de la Plaza Mayor).</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Colecciones</h5>
+        <ul class="footer-links">
+          <li><a href="#catalogo">Edición Girasoles</a></li>
+          <li><a href="#catalogo">Rosas Andinas de Amor</a></li>
+          <li><a href="#catalogo">Silvestres de Cajamarca</a></li>
+          <li><a href="#catalogo">Cajas de Lujo con NFC</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Horarios & Pedidos</h5>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <div>
+            <strong>Lunes a Domingo</strong><br>
+            8:00 AM – 9:30 PM
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <strong>+51 976 543 210</strong><br>
+            Atención telefónica y WhatsApp
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Medios de Pago</h5>
+        <p style="font-size: 0.85rem; color: #B2AAA0;">Aceptamos pagos directos e inmediatos en Perú:</p>
+        <div class="footer-payment-methods">
+          <span class="payment-pill">💜 Yape</span>
+          <span class="payment-pill">💙 Plin</span>
+          <span class="payment-pill">🏦 BCP</span>
+          <span class="payment-pill">🏦 BBVA</span>
+          <span class="payment-pill">💳 Tarjetas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Canes Florería Boutique • Todos los derechos reservados • Cajamarca, Perú.</p>
+      <p>
+        <a href="#" id="replay-intro-btn" class="footer-replay-intro">↺ Repetir animación de inicio</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       BARRA FLOTANTE MÓVIL (BOTTOM NAVIGATION)
+       ======================================================================= -->
+  <nav class="mobile-bottom-bar" aria-label="Navegación móvil inferior">
+    <div class="mobile-bottom-inner">
+      <a href="#catalogo" class="mobile-nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="7" height="7" x="3" y="3" rx="1"/>
+          <rect width="7" height="7" x="14" y="3" rx="1"/>
+          <rect width="7" height="7" x="14" y="14" rx="1"/>
+          <rect width="7" height="7" x="3" y="14" rx="1"/>
+        </svg>
+        <span>Catálogo</span>
+      </a>
+
+      <a href="#experiencia-nfc" class="mobile-nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="12" height="18" x="6" y="3" rx="2" ry="2"/>
+          <path d="M19 8a5 5 0 0 1 0 8"/>
+        </svg>
+        <span>NFC</span>
+      </a>
+
+      <button class="mobile-nav-item trigger-cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+          <path d="M3 6h18"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span>Carrito</span>
+      </button>
+
+      <a href="https://wa.me/51976543210?text=Hola%20Canes%20Florer%C3%ADa%20Cajamarca,%20quisiera%20pedir%20flores" target="_blank" rel="noopener noreferrer" class="mobile-nav-item">
+        <svg viewBox="0 0 24 24" fill="currentColor" color="#25D366">
+          <path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.34 5L2 22l5.16-1.32c1.43.8 3.07 1.25 4.84 1.25 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+        </svg>
+        <span>Pedir</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts compatibles tanto con servidor web como con apertura directa local (file://) -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
